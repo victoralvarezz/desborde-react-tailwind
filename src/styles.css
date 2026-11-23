@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{font-family:Arial,Helvetica,sans-serif;color:#151515;background:#f3f0e8;font-synthesis:none}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:320px}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible{outline:4px dashed #596dff;outline-offset:5px}
+::selection{background:#151515;color:#e9ff58}
+
+.skip-link{position:absolute;left:-9999px;top:0;padding:1rem;background:#fff;border:3px solid #151515;z-index:60}
+.skip-link:focus{left:1rem;top:1rem}
+.site-header{position:relative;z-index:30;background:#f3f0e8;border-bottom:4px solid #151515}
+.brand{font-family:'Arial Black',Arial,sans-serif;font-size:clamp(1.45rem,2vw,2.1rem);font-weight:900;letter-spacing:-.09em;line-height:1}
+.brand-exclaim{color:#ff6b53;font-size:1.2em}
+.brand-tail{font-size:.72em;letter-spacing:-.07em}
+.nav-link{position:relative;font-size:13px;transition:transform .2s}
+.nav-link:hover{transform:translateY(-3px)}
+.color-button,.menu-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:3px solid #151515;background:var(--accent);padding:9px 11px;box-shadow:3px 3px 0 #151515;font-size:11px;font-weight:900;white-space:nowrap;transition:transform .16s,box-shadow .16s}
+.color-button:hover,.menu-button:hover,.brutal-button:hover,.project-open:hover{transform:translate(3px,3px);box-shadow:0 0 0 #151515}
+.color-dot{display:inline-block;height:12px;width:12px;border:2px solid #151515;border-radius:50%;background:#fff}
+.menu-button{min-width:42px;font-size:17px;background:#fff}
+.mobile-nav{display:grid;gap:0;border-top:3px solid #151515;background:var(--accent)}
+.mobile-nav a{padding:14px 22px;font-size:18px;font-weight:900;text-transform:uppercase;border-bottom:2px solid #151515}
+
+/* Layout VH: 100vh como respaldo y 100dvh para barras móviles dinámicas. */
+.hero-viewport{min-height:calc(100vh - 82px);min-height:calc(100dvh - 82px);display:flex;align-items:center}
+.hero-viewport>div{flex:1}
+.hero-grid{background-color:#f3f0e8;background-image:linear-gradient(#1515150b 1px,transparent 1px),linear-gradient(90deg,#1515150b 1px,transparent 1px);background-size:36px 36px}
+.eyebrow{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.eyebrow-square{height:12px;width:12px;display:inline-block;background:var(--accent);border:2px solid #151515}
+.hero-title{font-size:clamp(3.65rem,7.5vw,9rem)}
+.hero-dot{color:#ff6b53}
+.outline-type{-webkit-text-stroke:2.4px #151515;color:transparent}
+.brutal-button{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:55px;padding:12px 21px;border:3px solid #151515;background:var(--accent);box-shadow:6px 6px 0 #151515;font-size:14px;font-weight:900;text-transform:uppercase;transition:transform .16s,box-shadow .16s}
+.brutal-button-outline{background:#fff}
+.note-star{font-size:29px;line-height:1}
+.poster-wrap{position:relative;max-width:620px;width:100%;margin-inline:auto;transform:rotate(2deg)}
+.poster-stage{position:relative;isolation:isolate;overflow:hidden;min-height:52vh;min-height:52dvh;max-height:690px;border:5px solid #151515;background:var(--accent);box-shadow:12px 12px 0 #151515;transition:transform .35s}
+.poster-wrap:hover .poster-stage{transform:rotate(-2deg) scale(1.015)}
+.poster-grid{position:absolute;inset:0;background-image:linear-gradient(90deg,#15151536 1px,transparent 1px),linear-gradient(#15151536 1px,transparent 1px);background-size:44px 44px}
+.poster-round{position:absolute;left:11%;top:14%;width:80%;aspect-ratio:1;border:6px solid #151515;border-radius:50%;display:grid;place-items:center;background:#ff6b53;box-shadow:18px 18px 0 #151515;transform:rotate(-12deg)}
+.poster-round:after{position:absolute;inset:18px;border:3px dashed #151515;border-radius:50%;content:'';pointer-events:none}
+.poster-round span{font-family:'Arial Black',Arial,sans-serif;text-align:center;font-weight:900;font-size:clamp(3.1rem,6.2vw,7rem);line-height:.86;letter-spacing:-.11em}
+.poster-burst{position:absolute;right:-2%;top:1%;font-size:clamp(100px,12vw,210px);line-height:1;color:#596dff;text-shadow:4px 4px 0 #151515;transform:rotate(14deg)}
+.poster-sticker{position:absolute;left:-3%;bottom:14%;display:grid;place-items:center;width:120px;height:120px;border:4px solid #151515;border-radius:50%;background:#fff;font-size:18px;font-weight:900;text-align:center;line-height:1.1;transform:rotate(16deg)}
+.poster-label{position:absolute;bottom:0;left:0;width:100%;display:flex;justify-content:space-between;border-top:4px solid #151515;background:#fff;padding:12px 15px;font-size:11px;font-weight:900;letter-spacing:.13em}
+.poster-undertext{display:flex;justify-content:space-between;gap:5px;margin-top:22px;font-size:10px;font-weight:900;letter-spacing:.07em}
+.ticker{background:#151515;color:var(--accent);font-family:'Arial Black',Arial,sans-serif;font-size:clamp(19px,3vw,36px);font-weight:900;white-space:nowrap}
+.ticker-track{display:flex;width:max-content;animation:marquee 24s linear infinite}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+.section-topline{display:flex;justify-content:space-between;gap:20px;border-bottom:3px solid #151515;padding-bottom:12px;font-size:12px;font-weight:900;letter-spacing:.1em}
+.section-title{font-family:'Arial Black',Arial,sans-serif;font-size:clamp(2.8rem,6.4vw,6.7rem);font-weight:900;line-height:.96;letter-spacing:-.085em;text-transform:uppercase}
+.text-stroke{-webkit-text-stroke:2px #151515}
+.feature-card{position:relative;display:flex;flex-direction:column;min-height:250px;border:4px solid #151515;padding:22px;box-shadow:7px 7px 0 #151515;transition:transform .2s}
+.feature-card:hover{transform:translateY(-5px)}
+.feature-yellow{background:var(--accent)}
+.feature-coral{background:#ff6b53}
+.feature-blue{background:#a4b2ff}
+.feature-number{font-size:13px;font-weight:900}
+.feature-symbol{margin-left:auto;margin-top:2px;font-family:'Arial Black',Arial,sans-serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;line-height:1}
+.feature-card h3{margin-top:auto;font-size:clamp(1.25rem,2vw,1.75rem);font-weight:900;letter-spacing:-.04em}
+.feature-card p{max-width:500px;margin-top:8px;font-size:14px;font-weight:600;line-height:1.45}
+.projects-section{background:#dcd9d1}
+.filter-pill{min-height:42px;border:3px solid #151515;background:#fff;padding:8px 18px;font-size:13px;font-weight:900;transition:background .15s,transform .15s}
+.filter-pill:hover{transform:translateY(-3px)}
+.filter-pill-active{background:var(--accent);box-shadow:3px 3px 0 #151515}
+.project-card{border:4px solid #151515;background:#fff;box-shadow:7px 7px 0 #151515;transition:transform .22s,box-shadow .22s}
+.project-card:hover{transform:translate(-3px,-4px);box-shadow:10px 11px 0 #151515}
+.project-art{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1.45;overflow:hidden;border-bottom:4px solid #151515}
+.art-headline{position:relative;z-index:2;font-family:'Arial Black',Arial,sans-serif;font-size:clamp(3.2rem,7vw,5.7rem);font-weight:900;letter-spacing:-.12em;line-height:1;text-align:center;transform:rotate(-7deg);-webkit-text-stroke:1px #151515}
+.art-halo{position:absolute;width:65%;aspect-ratio:1;border:5px solid #151515;border-radius:50%;transform:translate(20%,-12%) rotate(18deg)}
+.art-cross{position:absolute;left:8%;top:-9%;font-size:8rem;font-weight:900;z-index:1;line-height:1}
+.art-corner{position:absolute;bottom:12px;right:15px;font-size:11px;font-weight:900;z-index:2}
+.art-bloque{background:#a6aeff}.art-bloque .art-halo{background:#e9ff58;box-shadow:15px 15px 0 #151515}
+.art-ruido{background:#ff806e}.art-ruido .art-halo{border-radius:0;background:#ffe05b;transform:rotate(-18deg)}.art-ruido .art-headline{transform:rotate(9deg)}
+.art-loop{background:#a8f4d4}.art-loop .art-halo{border-width:20px;border-color:#596dff;background:#fff}.art-loop .art-headline{color:#ff6b53;transform:rotate(8deg)}
+.art-modo{background:#ffdf5d}.art-modo .art-halo{background:#fff;transform:translate(-20%,5%) scale(.8)}.art-modo .art-headline{font-size:clamp(3rem,7vw,5rem)}
+.art-tipo{background:#ffd1df}.art-tipo .art-halo{border-radius:0;background:#e9ff58;transform:rotate(35deg)}.art-tipo .art-headline{font-size:clamp(5rem,10vw,9rem)}
+.art-gira{background:#b8c2ff}.art-gira .art-halo{background:#ff6b53;border-style:dashed;animation:spin 12s linear infinite}.art-gira .art-headline{transform:rotate(-18deg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.like-button{position:absolute;z-index:3;right:14px;top:14px;display:grid;place-items:center;width:45px;height:45px;border:3px solid #151515;border-radius:50%;background:#fff;font-size:27px;line-height:1;transition:transform .15s}
+.like-button:hover{transform:scale(1.12)}.like-button.liked{background:#ff6b53}
+.project-open{display:grid;flex-shrink:0;place-items:center;width:43px;height:43px;border:3px solid #151515;background:var(--accent);box-shadow:3px 3px 0 #151515;font-size:22px;font-weight:900;transition:transform .16s,box-shadow .16s}
+.contact-block{background:var(--accent)}
+.contact-title{font-size:clamp(3.25rem,8vw,9rem)}
+.contact-asterisk{color:#ff6b53;-webkit-text-stroke:2px #151515}
+.modal-backdrop{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;background:#151515b8;padding:16px}
+.project-modal{width:min(640px,100%);max-height:92vh;max-height:92dvh;overflow-y:auto;border:5px solid #151515;background:#fff;box-shadow:12px 12px 0 #000}
+.project-modal .project-art{aspect-ratio:2.1;border:4px solid #151515}
+.modal-close{flex-shrink:0;display:grid;place-items:center;width:44px;height:44px;border:3px solid #151515;background:#fff;font-size:18px;font-weight:900}
+
+@media(max-width:1023px){
+  .hero-viewport{min-height:auto}
+  .poster-stage{min-height:43vh;min-height:43dvh}
+  .poster-wrap{max-width:700px}
+  .poster-round span{font-size:clamp(3.8rem,9vw,6.6rem)}
+}
+@media(max-width:639px){
+  .hero-title{font-size:clamp(3.3rem,13vw,5.7rem)}
+  .poster-stage{min-height:62vh;min-height:62dvh}
+  .poster-round{width:80%;top:20%}
+  .poster-round span{font-size:clamp(3rem,13vw,5.5rem)}
+  .poster-sticker{width:95px;height:95px;font-size:14px;bottom:14%}
+  .poster-burst{font-size:110px}
+  .section-topline{font-size:10px}
+  .art-headline{font-size:clamp(3.7rem,14vw,6rem)}
+  .contact-title{font-size:clamp(3.1rem,13vw,6rem)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
